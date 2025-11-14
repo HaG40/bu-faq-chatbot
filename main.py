@@ -13,7 +13,7 @@ load_dotenv()
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-faq_path = "dataset/bu_faq_data.json"
+faq_path = "bu_faq_data.json"
 faq_data = json.load(open(faq_path, "r", encoding="utf-8"))
 
 knowledge_block = ""
@@ -73,4 +73,5 @@ async def chat_api(req: ChatRequest):
 @app.get("/")
 async def root():
     return {"message": "BU FAQ Chatbot API is running!"}
+
 
